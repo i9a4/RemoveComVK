@@ -1,0 +1,97 @@
+﻿<Window x:Class="Project_one_series_Zero_Rewrite.General"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_one_series_Zero_Rewrite"
+        mc:Ignorable="d"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+        ResizeMode="NoResize"
+        
+        Title="Комментарии" Height="745" Width="1235">
+    <Grid Background="#FF0096EB" Margin="0,0,0,-1">
+        <Grid Margin="0,0,0,60">
+            <Border  BorderThickness="1" Margin="10,10,920,10" Background="#FFBBF3FF" Padding="10,10,10,10">
+                <Grid>
+                    <Label Name='DateRegistration' Style="{DynamicResource BlackText}" Content="Дата регистрации: 01.01.0001" HorizontalAlignment="Left" Margin="0,87,0,0" FontSize="18" HorizontalContentAlignment="Left" Padding="0,0,0,5" ScrollViewer.CanContentScroll="True"/>
+                    <Label Name="comCount" Style="{DynamicResource BlackText}" Content="Найдено всего комментариев: &#xD;&#xA;99999" HorizontalAlignment="Stretch" Margin="0,123,2,0" FontSize="18" HorizontalContentAlignment="Left" Grid.IsSharedSizeScope="True" Padding="0,0,0,5" ScrollViewer.CanContentScroll="True"/>
+                    <Grid Margin="0,10,0,0" Height="72" VerticalAlignment="Top">
+                        <Ellipse Name="Avatar" Width="48" Height="48" VerticalAlignment="Top" HorizontalAlignment="Left" >
+                            <Ellipse.Fill>
+
+                                <SolidColorBrush Color="White"></SolidColorBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Label Name="Owner" Style="{DynamicResource BlackText}" Content="Максим " FontSize="20" HorizontalContentAlignment="Left" Padding="0,5,0,5" ScrollViewer.CanContentScroll="True" Width="215" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="68,6,0,0"/>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Border  BorderThickness="1" Margin="0,10,10,10" Background="#FFBBF3FF" Padding="10,10,10,10" HorizontalAlignment="Right" Width="900">
+                <Grid x:Name="ComScreen" Margin="0,0,0,-1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="371*"/>
+                        <ColumnDefinition Width="449*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.ColumnSpan="2" Height="48" VerticalAlignment="Top">
+                        <TextBox Name="FindBox" Margin="0,9,148,10" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" BorderBrush="{x:Null}" KeyDown="FindBox_KeyDown"/>
+                        <Button Content="Поиск" Margin="809,9,0,10" Click="Button_Find" BorderBrush="{x:Null}" Background="White" HorizontalAlignment="Left" Width="69"/>
+                        <Button Content="Очистить" Margin="735,10,0,10" Click="ClearBtn" BorderBrush="{x:Null}" Background="White" HorizontalAlignment="Left" Width="69"/>
+                    </Grid>
+
+
+                    <Grid Margin="0,53,0,0" Grid.ColumnSpan="2">
+                        <ListBox Name="Comments" ItemContainerStyle="{StaticResource CommentsBox}">
+
+                            <ListBox.ItemTemplate>
+
+                                <DataTemplate DataType="local:CommentsItem">
+
+
+                                    <Grid>
+                                        <Grid Margin="0,0,0,65">
+                                            <Label Content="{Binding Date}" />
+                                        </Grid>
+                                        <Grid Margin="0,26,0,0">
+                                            <CheckBox Margin="4,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="Check" Unchecked="UnCheck" Tag="{Binding ID}"/>
+                                            <TextBox TextWrapping="Wrap" Text="{Binding Comments}" Height="55" Margin="29,4,87,6" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                                            <Button HorizontalAlignment="Left" Tag="{Binding Link}" Margin="782,0,0,0" VerticalAlignment="Center" Width="57" Height="55" Background="{x:Null}" FontSize="24" BorderBrush="{x:Null}" Click="openLink">
+                                                <svgc:SvgViewbox Source="\Resource\arrow-right.svg" Height="28" Width="28" />
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+
+
+
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                            <ComboBoxItem Height="95" BorderBrush="#FFA0A0A0" Margin="0,0,0,-1" Width="854" HorizontalAlignment="Left">
+                                <Grid Width="864">
+                                    <Grid Margin="0,0,0,65">
+                                        <Label Content="11 июл 2022 в 18:36" />
+                                    </Grid>
+                                    <Grid Margin="0,26,0,0">
+                                        <CheckBox Margin="4,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" HorizontalAlignment="Left" VerticalAlignment="Center"  />
+                                        <TextBox TextWrapping="Wrap" Text="TextBox" Height="55" Margin="29,4,87,6" BorderBrush="{x:Null}" IsReadOnly="True"/>
+                                        <Button HorizontalAlignment="Left" Margin="782,0,0,0" VerticalAlignment="Center" Width="57" Height="55" Background="{x:Null}" FontSize="24" BorderBrush="{x:Null}">
+                                            <svgc:SvgViewbox Source="\Resource\arrow-right.svg" Height="28" Width="28" />
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+
+                            </ComboBoxItem>
+
+                        </ListBox>
+                    </Grid>
+                </Grid>
+
+
+            </Border>
+
+        </Grid>
+        <Grid x:Name="ButtonScreen" Margin="10,0,10,10" Height="50" VerticalAlignment="Bottom" >
+            <Button Style="{StaticResource Button}" Content="Удалить все" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="170" Click="Button_ClickAll" />
+            <Button Style="{StaticResource ResourceKey=Button}" Content="Удалить выбранное" HorizontalAlignment="Left" Margin="840,0,0,0" VerticalAlignment="Stretch" Width="184" FontSize="16" Click="Button_Click"/>
+            <Label Style="{StaticResource BlackText}" Content="Нужна помощь?" HorizontalAlignment="Left" Margin="10,4,0,0" Foreground="White" FontSize="20" VerticalAlignment="Stretch"/>
+        </Grid>
+    </Grid>
+</Window>

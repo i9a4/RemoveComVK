@@ -1,0 +1,21 @@
+﻿<Window x:Class="Project_one_series_Zero_Rewrite.Progress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_one_series_Zero_Rewrite"
+        mc:Ignorable="d"
+        Title="Прогресс" Height="390" Width="575"
+        ResizeMode="NoResize">
+    <Grid Background="#FF0096EB">
+        <Label Name="HeaderName" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Height="54" Width="326" Foreground="White" FontSize="32" FontFamily="Segoe UI Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Border CornerRadius="9" BorderThickness="1" HorizontalAlignment="Center" Width="505" Background="#FFBBF3FF" Height="220" VerticalAlignment="Center">
+            <Grid>
+                <ProgressBar Name="Bar" Margin="45,89,44,89" Background="White" BorderBrush="{x:Null}" Value="50" Foreground="#FFD19CFF"/>
+                <Label Name="NameOperation" Content="Идет удаление..." Margin="45,45,0,0" Style="{DynamicResource BlackText}" HorizontalAlignment="Left"/>
+                <Label Name="Stuff" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="415" Height="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Segoe UI Variable Display Semibold" FontSize="22" Foreground="White" />
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
