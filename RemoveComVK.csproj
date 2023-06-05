@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <StartupObject>RemoveComVK.App</StartupObject>
+    <ApplicationIcon>Resource\ico.ico</ApplicationIcon>
+    <Title>RemoveComVK</Title>
+    <PackageIcon>ico.png</PackageIcon>
+    <Version>1.0.1</Version>
+    <Authors>Maxim D.</Authors>
+    <PackageProjectUrl>https://github.com/i9a4/RemoveComVK</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/i9a4/RemoveComVK</RepositoryUrl>
+    <Copyright>Maxim D.</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resource\arrow-right.svg" />
+    <None Remove="Resource\ico.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\ico.ico" />
+    <Content Include="Resource\ico.png" />
+    <Resource Include="Resource\arrow-right.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1518.46" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SharpVectors" Version="1.8.1" />
+    <PackageReference Include="SharpZipLib" Version="1.4.2" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resource\ico.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

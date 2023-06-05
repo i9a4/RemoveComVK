@@ -1,0 +1,43 @@
+﻿<Window x:Class="RemoveComVK.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RemoveComVK"
+                mc:Ignorable="d"
+        Title="Авторизация" Height="677" Width="400"
+        ResizeMode="NoResize" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+
+
+    <Grid Background="#FF0096EB" HorizontalAlignment="Center" Width="400">
+        <Grid x:Name="Window" Width="400">
+            <Label Style="{DynamicResource Label}" Content="Авторизация через VK" Margin="0,101,0,0" />
+            <Button Style="{DynamicResource Button}" Content="Далее" Margin="0,173,0,0" ScrollViewer.HorizontalScrollBarVisibility="Visible" Click="Button_Click"/>
+            <Border HorizontalAlignment="Center" Width="400" Height="10" VerticalAlignment="Top" Margin="0,267,0,0" RenderTransformOrigin="0.5,0.5" Background="White"/>
+            <Border CornerRadius="10" BorderThickness="0" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center" Width="104" Margin="0,252,0,0" Background="White">
+                <Label Content="ИЛИ" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="32" Height="54" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,-9,0,0" FontFamily="Yu Gothic UI"/>
+            </Border>
+            <Label Content="Авторизация по токену" Style="{DynamicResource Label}" VerticalAlignment="Center"/>
+            <TextBox Name="TokenBox" HorizontalAlignment="Center" Margin="0,369,0,0" Text="" VerticalAlignment="Top" Width="400" Height="60" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="22" BorderThickness="8,1,8,1"/>
+            <Button Style="{DynamicResource Button}" Content="Далее" Margin="0,463,0,0" ScrollViewer.HorizontalScrollBarVisibility="Visible" Click="BtnToken"/>
+            <Border HorizontalAlignment="Center" Width="400" Height="10" VerticalAlignment="Top" Margin="0,564,0,0" RenderTransformOrigin="0.5,0.5" Background="White"/>
+
+            <Border HorizontalAlignment="Center" Width="400" Height="10" VerticalAlignment="Top" Margin="0,76,0,0" RenderTransformOrigin="0.5,0.5" Background="White"/>
+            <Label Style="{DynamicResource Label}" Content="RemoveComVK" Margin="0,18,0,0" FontFamily="Segoe UI Variable Small Semibold" />
+            <Border Height="10" VerticalAlignment="Top" Margin="158,601,158,0" RenderTransformOrigin="0.5,0.5" Background="White">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+            </Border>
+            <Grid Margin="0,574,0,0" VerticalAlignment="Top" Height="77">
+                <Label Content="Нужна помощь?" Margin="0,0,200,10" Style="{DynamicResource LabelLittle}" HorizontalAlignment="Stretch" MouseLeftButtonDown="Label_MouseLeftButtonDown" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                <Label Content="О программе" Margin="200,0,0,10" Style="{DynamicResource LabelLittle}" HorizontalAlignment="Stretch" MouseDown="Label_MouseDown" VerticalAlignment="Stretch" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
