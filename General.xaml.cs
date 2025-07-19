@@ -347,6 +347,7 @@ namespace RemoveComVK
         private void ClearBtn(object sender, RoutedEventArgs e)
         {
             Search("");
+            FindBox.Clear();
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -467,6 +468,12 @@ namespace RemoveComVK
         private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             App.Help();
+        }
+
+        private void CopyTokenBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.Clear();
+            Clipboard.SetText(API.getToken());
         }
     }
 }

@@ -161,6 +161,11 @@ namespace RemoveComVK.Classes
 
         }
 
+        public static string getToken()
+        {
+            return Api;
+        }
+
         public static dynamic getAvatar()
         {
             JObject json = Json;
@@ -174,28 +179,28 @@ namespace RemoveComVK.Classes
 
         async public static Task<dynamic> getDate()
         {
-            JObject json = Json;
+            //JObject json = Json;
 
-            string scr = "https://vk.com/foaf.php?id=" + json["response"]["id"].ToString();
-            HttpClient httpClient = new HttpClient();
-            var resp = await httpClient.GetAsync(scr);
+            //string scr = "https://vk.com/foaf.php?id=" + json["response"]["id"].ToString();
+            //HttpClient httpClient = new HttpClient();
+            //var resp = await httpClient.GetAsync(scr);
 
-            //byte[] bytes = await resp.Content.ReadAsByteArrayAsync();
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            /*Encoding encode = Encoding.GetEncoding("windows-1251");
+            ////byte[] bytes = await resp.Content.ReadAsByteArrayAsync();
+            //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            ///*Encoding encode = Encoding.GetEncoding("windows-1251");
             
-            string result = encode.GetString(bytes, 0, bytes.Length);*/
+            //string result = encode.GetString(bytes, 0, bytes.Length);*/
 
-            string result = await resp.Content.ReadAsStringAsync();
+            //string result = await resp.Content.ReadAsStringAsync();
 
-            XmlDocument xml = new XmlDocument();
-            xml.LoadXml(result);
+            //XmlDocument xml = new XmlDocument();
+            //xml.LoadXml(result);
 
-            XmlNode node = xml.DocumentElement;
-            string list = node.FirstChild.ChildNodes[8].Attributes[0].InnerText;
-            DateTime dt = DateTime.Parse(list);
+            //XmlNode node = xml.DocumentElement;
+            //string list = node.FirstChild.ChildNodes[8].Attributes[0].InnerText;
+            //DateTime dt = DateTime.Parse(list);
 
-            return dt.Date.ToShortDateString();
+            return "";
         }
 
         public static dynamic getID()

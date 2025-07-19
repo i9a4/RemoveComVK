@@ -3,6 +3,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>True</UseWindowsForms>
@@ -11,7 +14,7 @@
     <ApplicationIcon>Resource\ico.ico</ApplicationIcon>
     <Title>RemoveComVK</Title>
     <PackageIcon>ico.png</PackageIcon>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Maxim D.</Authors>
     <PackageProjectUrl>https://github.com/i9a4/RemoveComVK</PackageProjectUrl>
     <RepositoryUrl>https://github.com/i9a4/RemoveComVK</RepositoryUrl>
